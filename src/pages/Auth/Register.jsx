@@ -50,6 +50,7 @@
     const onSubmit = async (data) => {
         setIsLoading(true);
         try {
+        // eslint-disable-next-line no-unused-vars
         const { confirmPassword, ...userData } = data;
         
         const formData = new FormData();

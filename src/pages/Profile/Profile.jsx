@@ -22,7 +22,9 @@
     const queryClient = useQueryClient();
     const [showPassword, setShowPassword] = useState(false);
     const [avatarError, setAvatarError] = useState(false);
-
+    const memberSince = new Date(
+        user?.createdAt || new Date()
+    ).toLocaleDateString();
     const profileImageUrl = getProfileImageUrl(user?.profileImage);
     const showAvatar = profileImageUrl && !avatarError;
 
@@ -103,7 +105,7 @@
                 </h2>
                 <p className="text-gray-600 dark:text-gray-400">{user?.email}</p>
                 <p className="text-sm text-gray-500 mt-1">
-                Member since {new Date(user?.createdAt || Date.now()).toLocaleDateString()}
+                Member since {memberSince}
                 </p>
             </div>
             </div>
